@@ -12,7 +12,7 @@ admin_email=whoisgodaddy@gmail.com
 # This is a path to a plain text list of URLs to check, one per line
 # Make sure this uses proper unix newline characters or you will get 400 Bad Request errors
 # when you try to curl the URLs
-url_list=/path/to/list.txt
+url_list=./list.txt
 
 # Init empty variable for storing errors
 failures=""
@@ -26,7 +26,7 @@ validation='<meta name="is_live" content="true"/>'
 
 # We need to use an up to date CA cert bundle to verify that our SSL certs are working for https:// URLs
 # You can obtain this file from: http://curl.haxx.se/docs/caextract.html
-cabundle=/path/to/cert.pem
+cabundle=./cert.pem
 
 # Loop through all of the URLs and cURL them
 while read siteurl
@@ -59,6 +59,6 @@ if ! [ -z "$failures" ]; then
 	# mailx will convert our email body into an attachment (or just fail to send the email)
 	# if the newline characters aren't handled properly. So, we pipe the output through iconv and tr.
 	# See: http://stackoverflow.com/a/18917677/931860
-	echo "One or more of your websites might be down. See the results below. $failures" | iconv -c -t UTF-8 | tr -d '\r' | mailx -s "Automated Website Check Failed" $admin_email
+	echo $failures >> failures.txt
 
 fi
