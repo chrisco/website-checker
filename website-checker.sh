@@ -22,7 +22,7 @@ failures=""
 # I recommend not using an HTML comment for the string because comments are
 # automatically stripped by some performance optimization systems
 # (e.g. CloudFlare).
-validation='<meta name="is_live" content="true"/>'
+validation='<meta name="generator" content="TYPO3 CMS">'
 
 # We need to use an up to date CA cert bundle to verify that our SSL certs are working for https:// URLs
 # You can obtain this file from: http://curl.haxx.se/docs/caextract.html
