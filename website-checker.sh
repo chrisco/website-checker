@@ -7,7 +7,7 @@
 ################################################################################
 
 # Recipient of the errors email
-admin_email=whoisgodaddy@gmail.com
+admin_email=you@domain.com
 
 # This is a path to a plain text list of URLs to check, one per line
 # Make sure this uses proper unix newline characters or you will get 400 Bad Request errors
@@ -47,7 +47,7 @@ do
 	if ! echo "$result" | grep -q "$validation" ; then
 
 		# Add the site url and the curl output to our failures variable
-		failures="$failures"$'\n\n'"======================="$'\n\n'"$siteurl"$'\n'"----------------------"$'\n'"$result"
+		failures="$failures"$"$siteurl\n"
 
 	fi
 
