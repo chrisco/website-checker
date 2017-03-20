@@ -1,12 +1,10 @@
 #!/bin/sh
 # ---- website-checker.sh ----
-# Via https://gist.github.com/chrisco/247cb2d5eddd55ec26645e22b4a7e219
-# Pings a list of websites using cURL to see if they are up and
-# there are no errors. If there are problems, we send an email using mailx
-# to let ourselves know about the problem.
+# Via https://gist.github.com/dominic-p/8729136
+# Pings list of websites using cURL to see if they're up and there are no errors
 ################################################################################
 
-# Recipient of the errors email
+# Recipient of the errors email [not using in this version of script]
 admin_email=you@domain.com
 
 # This is a path to a plain text list of URLs to check, one per line
